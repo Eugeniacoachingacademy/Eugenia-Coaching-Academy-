@@ -1831,6 +1831,15 @@ mask-image:linear-gradient(to bottom,transparent,#000 23%,#000 74%,transparent)}
 <div class="footer">EUGENIA COACHING ACADEMY · INDIVIDUELL · PERSÖNLICH · GANZHEITLICH</div>
 </main>
 <script>
+function closePanel(id){
+ var checkboxId=id==='kundenmeinungen'?'testimonials-toggle':id==='ueber-mich'?'about-toggle':id;
+ var checkbox=document.getElementById(checkboxId);
+ if(checkbox)checkbox.checked=false;
+ var form=document.getElementById('review-form-toggle');
+ if(form)form.checked=false;
+ var header=document.querySelector('.premium-header');
+ if(header)header.scrollIntoView({behavior:'smooth',block:'start'});
+}
 function togglePremiumPanel(id){
  var el=document.getElementById(id);
  if(!el)return;
