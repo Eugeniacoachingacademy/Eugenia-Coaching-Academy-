@@ -1655,6 +1655,23 @@ mask-image:linear-gradient(to bottom,transparent,#000 23%,#000 74%,transparent)}
 .testimonials-popup .reviews-cta{font-weight:700;color:#dfbc70!important;font-size:14px!important;margin:0 auto 12px!important}
 .testimonials-popup .reviews-disclaimer{font-size:10px!important;color:#908777!important;max-width:360px;line-height:1.6}
 .testimonials-popup .testimonials-close{display:block;margin:24px auto 0;background:none;border:0;font-size:11px;letter-spacing:1.3px;color:#dfbc70;cursor:pointer}
+</style><style id="review-interactive-test">
+.review-open{display:block;width:100%;border:1px solid rgba(214,177,90,.65);background:rgba(214,177,90,.10);border-radius:6px;padding:15px 10px;color:#dfbc70;font-size:12px;font-weight:700;letter-spacing:1px;cursor:pointer}
+.review-test-form,.review-test-result{margin:20px auto 0;max-width:460px;text-align:left;border:1px solid rgba(214,177,90,.32);background:#0b0b0b;border-radius:9px;padding:20px}
+.review-test-form[hidden],.review-test-result[hidden]{display:none!important}
+.review-test-label{color:#d9b36d;font-size:10px;letter-spacing:1.2px;font-weight:700;margin-bottom:17px}
+.review-test-form form{display:grid;gap:10px}
+.review-test-form label{color:#f3e9d6;font-size:13px}
+.review-test-form input:not([type=checkbox]),.review-test-form select,.review-test-form textarea{width:100%;border:1px solid #5e5038;border-radius:5px;background:#1a1917;color:#f5f1e8;font-size:15px;padding:13px;font-family:Arial,sans-serif;outline-offset:2px}
+.review-test-form textarea{resize:vertical}
+.review-test-form .review-consent{display:flex;align-items:flex-start;gap:9px;line-height:1.5;font-size:12px;color:#d0c8b9}
+.review-test-form .review-consent input{margin-top:3px;accent-color:#d6b15a}
+.review-submit,.review-secondary{border:1px solid #d6b15a;border-radius:5px;padding:14px 12px;background:#d6b15a;color:#080808;font-weight:700;cursor:pointer;letter-spacing:.4px}
+.review-secondary{display:block;width:100%;margin-top:10px;background:transparent;color:#d6b15a}
+.review-test-result p{line-height:1.6}
+.review-preview-content{white-space:pre-wrap;overflow-wrap:anywhere;border-left:2px solid #d6b15a;padding:13px;background:#181613;margin:18px 0;color:#f3ebde;font-size:14px}
+.review-test-result .review-submit{width:100%}
+.review-display .review-body{white-space:pre-wrap;overflow-wrap:anywhere}
 </style></head>
 <body>
 <main class="page">
@@ -1683,8 +1700,28 @@ mask-image:linear-gradient(to bottom,transparent,#000 23%,#000 74%,transparent)}
 <div class="review-name">PERSÖNLICH · ECHT · FREIGEGEBEN</div>
 </div>
 <p class="reviews-action">Du hast bereits mit mir gearbeitet?</p>
-<p class="reviews-cta">Eigene Erfahrung teilen <span aria-hidden="true">↗</span></p>
-<p class="reviews-disclaimer">Die Einreichung ohne Anmeldung und deine persönliche Freigabe werden noch eingerichtet. Dieser Link ist in der Vorschau noch nicht aktiv.</p>
+<button type="button" class="reviews-cta review-open" onclick="showReviewForm()">EIGENE ERFAHRUNG TEILEN <span aria-hidden="true">↗</span></button>
+<div id="review-test-form" class="review-test-form" hidden>
+<div class="review-test-label">TESTMODUS · KEINE ÖFFENTLICHE VERÖFFENTLICHUNG</div>
+<form onsubmit="previewReviewSubmit(event)">
+<label for="review-firstname">Dein Vorname</label>
+<input id="review-firstname" type="text" maxlength="45" required placeholder="z. B. Anna" autocomplete="given-name"/>
+<label for="review-coaching">Welches Coaching hast du besucht?</label>
+<select id="review-coaching" required><option value="">Bitte auswählen</option><option>Trading Coaching</option><option>Trader Performance</option><option>Mental Coaching</option><option>Mental Transformation</option><option>Persönliche Beratung</option></select>
+<label for="review-message">Wie hast du die Zusammenarbeit erlebt?</label>
+<textarea id="review-message" required minlength="15" maxlength="1800" rows="6" placeholder="Erzähle von deiner persönlichen Erfahrung ..."></textarea>
+<label class="review-consent"><input id="review-agree" type="checkbox" required/> Ich bin damit einverstanden, dass mein Vorname und meine Erfahrung nach einer Freigabe veröffentlicht werden dürfen.</label>
+<button type="submit" class="review-submit">TESTBEITRAG ABSENDEN</button>
+</form>
+</div>
+<div id="review-test-result" class="review-test-result" hidden aria-live="polite">
+<div class="review-test-label">TESTBEITRAG EINGEGANGEN</div>
+<p>Danke! So würde eine Kundin nach dem Absenden informiert werden. Der Beitrag wäre zunächst nur zur Prüfung vorgemerkt.</p>
+<div class="review-preview-content" id="review-preview-content"></div>
+<button type="button" class="review-submit" onclick="approvePreviewReview()">ALS INHABERIN FREIGEBEN (TEST)</button>
+<button type="button" class="review-secondary" onclick="rejectPreviewReview()">ABLEHNEN (TEST)</button>
+</div>
+<p class="reviews-disclaimer">Dies ist eine interaktive Vorschau. Testtexte werden nur in diesem geöffneten Browserfenster angezeigt, nicht versendet oder gespeichert. Ein echtes Einreichungs- und Freigabesystem wird erst nach deiner Freigabe eingerichtet.</p>
 <button class="testimonials-close" type="button" onclick="closePanel('kundenmeinungen')">SCHLIESSEN ×</button>
 </section>
 <section class="about-popup" id="ueber-mich">
@@ -1795,6 +1832,38 @@ function togglePremiumPanel(id){
  document.getElementById('testimonials-toggle').checked=false;
  el.checked=next;
  if(next){var panel=document.getElementById(id==='about-toggle'?'ueber-mich':'kundenmeinungen');if(panel)panel.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+</script><script>
+var reviewPreviewData=null;
+function showReviewForm(){
+ document.getElementById('review-test-form').hidden=false;
+ document.getElementById('review-test-result').hidden=true;
+ document.getElementById('review-test-form').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function previewReviewSubmit(event){
+ event.preventDefault();
+ var name=document.getElementById('review-firstname').value.trim();
+ var type=document.getElementById('review-coaching').value;
+ var message=document.getElementById('review-message').value.trim();
+ if(!name||!type||message.length<15||!document.getElementById('review-agree').checked)return;
+ reviewPreviewData={name:name,type:type,message:message};
+ document.getElementById('review-preview-content').textContent=message+'\n\n'+name+' · '+type;
+ document.getElementById('review-test-form').hidden=true;
+ document.getElementById('review-test-result').hidden=false;
+ document.getElementById('review-test-result').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function approvePreviewReview(){
+ if(!reviewPreviewData)return;
+ document.querySelector('.review-display .review-body').textContent=reviewPreviewData.message;
+ document.querySelector('.review-display .review-name').textContent=reviewPreviewData.name+' · '+reviewPreviewData.type+' · TESTFREIGABE';
+ document.getElementById('review-test-result').hidden=true;
+ document.getElementById('review-test-form').hidden=true;
+ document.querySelector('.review-display').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function rejectPreviewReview(){
+ document.getElementById('review-test-result').hidden=true;
+ reviewPreviewData=null;
+ document.querySelector('.review-display').scrollIntoView({behavior:'smooth',block:'center'});
 }
 </script></body>
 </html>
