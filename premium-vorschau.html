@@ -1599,6 +1599,17 @@ mask-image:linear-gradient(to bottom,transparent,#000 23%,#000 74%,transparent)}
 .premium-header .premium-menu>*+*::before{display:none!important}
 .logo-section .focus-intro::before,#coaching .focus-intro::before{display:none!important;content:none!important}
 @media(max-width:440px){.premium-header .header-tagline{font-size:9px!important;letter-spacing:.75px!important;line-height:1.85!important}.premium-header .premium-menu{grid-template-columns:1.4fr .9fr .8fr!important}.premium-header .premium-menu label,.premium-header .premium-menu a{font-size:8px!important;letter-spacing:0!important}.premium-header .premium-menu label[for="about-toggle"]{font-size:9px!important}}
+</style><style id="premium-menu-functional-fix">
+.premium-header .premium-menu{display:grid!important;grid-template-columns:1fr 1fr 1fr!important}
+.premium-header .premium-menu .menu-action{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;color:#d9bc83!important;font:700 10px/1.35 Arial,Helvetica,sans-serif!important;letter-spacing:.4px!important;padding:14px 4px!important;cursor:pointer!important;position:relative!important;z-index:10!important;appearance:none!important;-webkit-appearance:none!important}
+.premium-header .premium-menu .menu-action:hover,.premium-header .premium-menu .menu-action:focus-visible{color:#fff1d1!important;background:rgba(214,177,90,.1)!important}
+.premium-header .premium-menu .menu-action:nth-child(2){color:#f2d18c!important;font-weight:800!important}
+.premium-header .premium-menu .menu-action:nth-child(2):after{content:"";position:absolute;bottom:5px;left:27%;right:27%;height:1px;background:linear-gradient(90deg,transparent,#dfbc70,transparent)}
+.premium-header .premium-menu .menu-action:nth-child(2):before{display:none!important}
+.premium-header .premium-menu>*{order:initial!important}
+.premium-header .premium-menu .menu-action,.premium-header .premium-menu a{flex:none!important}
+.premium-header .premium-menu a{position:relative!important;z-index:10!important}
+@media(max-width:440px){.premium-header .premium-menu .menu-action{font-size:8px!important;letter-spacing:0!important;padding:13px 2px!important}}
 </style></head>
 <body>
 <main class="page">
@@ -1612,12 +1623,12 @@ mask-image:linear-gradient(to bottom,transparent,#000 23%,#000 74%,transparent)}
 <div class="header-tagline">PERSÖNLICHE ENTWICKLUNG <span>·</span> MENTALE STÄRKE <span>·</span> NACHHALTIGE PERFORMANCE</div>
 
 <nav class="premium-menu" aria-label="Hauptmenü">
-<label for="testimonials-toggle">KUNDENERFAHRUNGEN</label>
-<label for="about-toggle">ÜBER MICH</label>
+<button type="button" class="menu-action" onclick="togglePremiumPanel('testimonials-toggle')">KUNDENERFAHRUNGEN</button>
+<button type="button" class="menu-action" onclick="togglePremiumPanel('about-toggle')">ÜBER MICH</button>
 <a href="#kontakt">KONTAKT</a>
 </nav>
 </div>
-<section class="testimonials-popup">
+<section class="testimonials-popup" id="kundenmeinungen">
 <h2>Erfahrungen, die für sich sprechen.</h2>
 <p>Jeder Coaching-Weg ist individuell. Hier werden künftig persönliche Erfahrungsberichte von Menschen sichtbar, die ich begleiten durfte.</p>
 <p>Du möchtest deine Erfahrung teilen? Eine Einreichungsmöglichkeit ohne Anmeldung ist geplant. Jeder Beitrag wird vor einer Veröffentlichung persönlich geprüft und freigegeben.</p>
@@ -1723,5 +1734,15 @@ mask-image:linear-gradient(to bottom,transparent,#000 23%,#000 74%,transparent)}
 </section>
 <div class="footer">EUGENIA COACHING ACADEMY · INDIVIDUELL · PERSÖNLICH · GANZHEITLICH</div>
 </main>
-</body>
+<script>
+function togglePremiumPanel(id){
+ var el=document.getElementById(id);
+ if(!el)return;
+ var next=!el.checked;
+ document.getElementById('about-toggle').checked=false;
+ document.getElementById('testimonials-toggle').checked=false;
+ el.checked=next;
+ if(next){var panel=document.getElementById(id==='about-toggle'?'ueber-mich':'kundenmeinungen');if(panel)panel.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+</script></body>
 </html>
