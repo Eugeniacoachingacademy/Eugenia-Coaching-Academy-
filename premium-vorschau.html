@@ -1814,11 +1814,13 @@ button:focus-visible,a:focus-visible,label[role=button]:focus-visible{outline:2p
 <form onsubmit="previewReviewSubmit(event)">
 <label for="review-firstname">Dein Vorname</label>
 <input id="review-firstname" type="text" maxlength="45" required placeholder="z. B. Anna" autocomplete="given-name"/>
+<label for="review-age">Alter (optional)</label>
+<input id="review-age" type="number" inputmode="numeric" min="1" max="120" step="1" placeholder="z. B. 38"/>
 <label for="review-coaching">Welches Coaching hast du besucht?</label>
 <select id="review-coaching" required><option value="">Bitte auswählen</option><option>Trading Coaching</option><option>Trader Performance</option><option>Mental Coaching</option></select>
 <label for="review-message">Wie hast du die Zusammenarbeit erlebt?</label>
 <textarea id="review-message" required minlength="15" maxlength="1800" rows="6" placeholder="Erzähle von deiner persönlichen Erfahrung ..."></textarea>
-<label class="review-consent"><input id="review-agree" type="checkbox" required/> Ich bin damit einverstanden, dass mein Vorname und meine Erfahrung nach einer Freigabe veröffentlicht werden dürfen.</label>
+<label class="review-consent"><input id="review-agree" type="checkbox" required/> Ich bin damit einverstanden, dass mein Vorname, mein optional angegebenes Alter und meine Erfahrung nach einer Freigabe veröffentlicht werden dürfen.</label>
 <button type="submit" class="review-submit">TESTBEITRAG ABSENDEN</button>
 </form>
 </div>
@@ -1962,11 +1964,13 @@ function showReviewForm(){
 function previewReviewSubmit(event){
  event.preventDefault();
  var name=document.getElementById('review-firstname').value.trim();
+ var age=document.getElementById('review-age').value.trim();
+ if(age&&(!Number.isInteger(Number(age))||Number(age)<1||Number(age)>120))return;
  var type=document.getElementById('review-coaching').value;
  var message=document.getElementById('review-message').value.trim();
  if(!name||!type||message.length<15||!document.getElementById('review-agree').checked)return;
- reviewPreviewData={name:name,type:type,message:message};
- document.getElementById('review-preview-content').textContent=message+'\n\n'+name+' · '+type;
+ reviewPreviewData={name:name,age:age,type:type,message:message};
+ document.getElementById('review-preview-content').textContent=message+'\n\n'+name+(age?', '+age+' Jahre':'')+' · '+type;
  document.getElementById('review-form-toggle').checked=false;
  document.getElementById('review-test-result').hidden=false;
  document.getElementById('review-test-result').scrollIntoView({behavior:'smooth',block:'start'});
@@ -1974,7 +1978,7 @@ function previewReviewSubmit(event){
 function approvePreviewReview(){
  if(!reviewPreviewData)return;
  document.querySelector('.review-display .review-body').textContent=reviewPreviewData.message;
- document.querySelector('.review-display .review-name').textContent=reviewPreviewData.name+' · '+reviewPreviewData.type+' · TESTFREIGABE';
+ document.querySelector('.review-display .review-name').textContent=reviewPreviewData.name+(reviewPreviewData.age?', '+reviewPreviewData.age+' Jahre':'')+' · '+reviewPreviewData.type+' · TESTFREIGABE';
  document.getElementById('review-test-result').hidden=true;
  document.getElementById('review-test-form').hidden=true;
  document.querySelector('.review-display').scrollIntoView({behavior:'smooth',block:'center'});
