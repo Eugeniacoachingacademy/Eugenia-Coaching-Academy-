@@ -1779,7 +1779,28 @@ button:focus-visible,a:focus-visible,label[role=button]:focus-visible{outline:2p
  word-break:normal!important;
  hyphens:none!important;
 }
-</style></head>
+</style><meta name="description" content="Individuelles 1:1 Coaching mit Eugenia: Trading für Anfänger, Trader Performance und Mental Coaching. Persönliche Begleitung, abgestimmt auf dich und deine Ziele."/>
+<link rel="canonical" href="https://eugenia-coaching-academy.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="de_DE"/>
+<meta property="og:site_name" content="Eugenia Coaching Academy"/>
+<meta property="og:title" content="Eugenia Coaching Academy – Individuelles 1:1 Coaching"/>
+<meta property="og:description" content="Trading lernen, deine Performance entwickeln und persönliche Ziele erreichen – mit Eugenias persönlicher Begleitung."/>
+<meta property="og:url" content="https://eugenia-coaching-academy.com/"/>
+<meta property="og:image" content="https://eugenia-coaching-academy.com/assets/eugenia-coaching-academy-share.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:type" content="image/jpeg"/>
+<meta property="og:image:alt" content="Eugenia Coaching Academy – Trading, Trader Performance und Mental Coaching"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Eugenia Coaching Academy – Individuelles 1:1 Coaching"/>
+<meta name="twitter:description" content="Trading, Trader Performance und Mental Coaching mit persönlicher Begleitung."/>
+<meta name="twitter:image" content="https://eugenia-coaching-academy.com/assets/eugenia-coaching-academy-share.jpg"/>
+<style id="live-reviews-and-sharing">
+.review-rating{padding:0;margin:10px 0 15px;border:0;min-width:0}.review-rating legend{font-size:15px;color:#f3e9d6;margin-bottom:8px}.rating-options{display:flex;gap:9px;max-width:100%}.rating-options label{display:flex;align-items:center;justify-content:center;position:relative;min-width:40px;min-height:46px;cursor:pointer}.rating-options input{position:absolute;width:1px;height:1px;opacity:0}.rating-options label>span[aria-hidden]{font-size:36px;line-height:1;color:#80735c}.rating-options label:has(input:checked)>span,.rating-options label:has(~ label input:checked)>span{color:#dfbc70}.rating-options label:has(input:focus-visible){outline:2px solid #ffe1a0;outline-offset:3px;border-radius:4px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.review-honeypot{display:none}.review-error{color:#ffd0c3!important;border:1px solid #8b5640;padding:12px;border-radius:6px}.review-data-note{font-size:12px!important;line-height:1.65!important}.review-data-note a{color:#ead59a}.public-review-stars{color:#dfbc70;font-size:24px;letter-spacing:3px;margin:0 0 18px}.review-display .review-body{margin:0!important;font:normal 19px/1.7 Georgia,serif!important;text-align:center}.review-display .review-name{font-size:12px!important;line-height:1.65;letter-spacing:.7px}.review-form-intro{font-size:15px!important;line-height:1.65!important}.share-site{width:100%;margin-top:28px;background:rgba(214,177,90,.08);cursor:pointer;font-family:inherit}.share-site-status{font-size:13px;text-align:center;color:#dfbc70;overflow-wrap:anywhere}.review-submit:disabled{opacity:.65;cursor:wait}#reviews-more[hidden],#reviews-retry[hidden]{display:none!important}#public-reviews{margin:20px 0}.reviews-disclaimer{font-size:12px!important;line-height:1.65!important}.review-display{height:auto;min-height:0;padding:28px 20px;margin-bottom:18px}
+@media(max-width:360px){.rating-options{gap:4px}.rating-options label{min-width:37px}.rating-options label>span[aria-hidden]{font-size:31px}}
+</style>
+</head>
 <body>
 <main class="page">
 <div class="preview-ribbon">DESIGNVORSCHAU · DEINE LIVE-WEBSITE BLEIBT UNVERÄNDERT</div>
@@ -1800,38 +1821,33 @@ button:focus-visible,a:focus-visible,label[role=button]:focus-visible{outline:2p
 <section class="testimonials-popup" id="kundenmeinungen" aria-label="Kundenerfahrungen">
 <h2>KUNDENERFAHRUNGEN</h2>
 <p class="reviews-subtitle">Persönliche Erfahrungen aus der Zusammenarbeit.</p>
-<div class="review-display">
-<div class="review-mark" aria-hidden="true">“</div>
-<div class="review-body">Hier erscheint die erste freigegebene Kundenerfahrung.</div>
-<div class="review-line"></div>
-<div class="review-name">PERSÖNLICH · ECHT · FREIGEGEBEN</div>
-</div>
+<div id="public-reviews" aria-live="polite"><p id="reviews-load-state">Kundenerfahrungen werden geladen …</p></div>
+<button id="reviews-more" class="review-secondary" type="button" hidden>Weitere Erfahrungen</button>
+<button id="reviews-retry" class="review-secondary" type="button" hidden>Erneut laden</button>
 <p class="reviews-action">Du hast bereits mit mir gearbeitet?</p>
 <input type="checkbox" id="review-form-toggle" class="review-form-toggle"/>
 <label for="review-form-toggle" class="reviews-cta review-open" role="button">EIGENE ERFAHRUNG TEILEN <span aria-hidden="true">＋</span></label>
 <div id="review-test-form" class="review-test-form">
-<div class="review-test-label">TESTMODUS · KEINE ÖFFENTLICHE VERÖFFENTLICHUNG</div>
-<form onsubmit="previewReviewSubmit(event)">
+<p class="review-form-intro">Teile deine Erfahrung. Sie erscheint erst nach meiner persönlichen Freigabe.</p>
+<form id="review-form" onsubmit="submitReview(event)">
 <label for="review-firstname">Dein Vorname</label>
 <input id="review-firstname" type="text" maxlength="45" required placeholder="z. B. Anna" autocomplete="given-name"/>
 <label for="review-age">Alter (optional)</label>
 <input id="review-age" type="number" inputmode="numeric" min="1" max="120" step="1" placeholder="z. B. 38"/>
 <label for="review-coaching">Welches Coaching hast du besucht?</label>
 <select id="review-coaching" required><option value="">Bitte auswählen</option><option>Trading Coaching</option><option>Trader Performance</option><option>Mental Coaching</option></select>
+<fieldset class="review-rating"><legend>Deine Bewertung</legend><div class="rating-options"><label><input type="radio" name="review-rating" value="1" required/><span aria-hidden="true">★</span><span class="sr-only">1 Stern</span></label><label><input type="radio" name="review-rating" value="2" required/><span aria-hidden="true">★</span><span class="sr-only">2 Sterne</span></label><label><input type="radio" name="review-rating" value="3" required/><span aria-hidden="true">★</span><span class="sr-only">3 Sterne</span></label><label><input type="radio" name="review-rating" value="4" required/><span aria-hidden="true">★</span><span class="sr-only">4 Sterne</span></label><label><input type="radio" name="review-rating" value="5" required/><span aria-hidden="true">★</span><span class="sr-only">5 Sterne</span></label></div></fieldset>
 <label for="review-message">Wie hast du die Zusammenarbeit erlebt?</label>
 <textarea id="review-message" required minlength="15" maxlength="1800" rows="6" placeholder="Erzähle von deiner persönlichen Erfahrung ..."></textarea>
-<label class="review-consent"><input id="review-agree" type="checkbox" required/> Ich bin damit einverstanden, dass mein Vorname, mein optional angegebenes Alter und meine Erfahrung nach einer Freigabe veröffentlicht werden dürfen.</label>
-<button type="submit" class="review-submit">TESTBEITRAG ABSENDEN</button>
+<label class="review-consent"><input id="review-agree" type="checkbox" required/> Ich bin damit einverstanden, dass mein Vorname, mein optional angegebenes Alter, meine Sternebewertung, das gewählte Coaching und meine Erfahrung nach einer Freigabe veröffentlicht werden dürfen.</label>
+<div class="review-honeypot" aria-hidden="true"><label for="review-website">Website</label><input id="review-website" type="text" tabindex="-1" autocomplete="off"/></div>
+<p class="review-data-note">Informationen zur Verarbeitung findest du im <a href="#datenschutz" onclick="document.getElementById('datenschutz-toggle').checked=true">Datenschutz</a>.</p>
+<p id="review-submit-error" class="review-error" role="alert" hidden></p>
+<button id="review-submit-button" type="submit" class="review-submit">ERFAHRUNG ABSENDEN</button>
 </form>
 </div>
-<div id="review-test-result" class="review-test-result" hidden aria-live="polite">
-<div class="review-test-label">TESTBEITRAG EINGEGANGEN</div>
-<p>Danke! So würde eine Kundin nach dem Absenden informiert werden. Der Beitrag wäre zunächst nur zur Prüfung vorgemerkt.</p>
-<div class="review-preview-content" id="review-preview-content"></div>
-<button type="button" class="review-submit" onclick="approvePreviewReview()">ALS INHABERIN FREIGEBEN (TEST)</button>
-<button type="button" class="review-secondary" onclick="rejectPreviewReview()">ABLEHNEN (TEST)</button>
-</div>
-<p class="reviews-disclaimer">Dies ist eine interaktive Vorschau. Testtexte werden nur in diesem geöffneten Browserfenster angezeigt, nicht versendet oder gespeichert. Ein echtes Einreichungs- und Freigabesystem wird erst nach deiner Freigabe eingerichtet.</p>
+<div id="review-test-result" class="review-test-result" hidden role="status" aria-live="polite"><div class="review-test-label">DEINE ERFAHRUNG IST EINGEGANGEN</div><p>Vielen Dank! Ich schaue mir deinen Beitrag persönlich an. Nach meiner Freigabe kann er hier veröffentlicht werden.</p></div>
+<p class="reviews-disclaimer">Deine Erfahrung wird gespeichert und vor einer Veröffentlichung persönlich geprüft.</p>
 <button class="testimonials-close" type="button" onclick="closePanel('kundenmeinungen')">SCHLIESSEN ×</button>
 </section>
 <section class="about-popup" id="ueber-mich">
@@ -1915,6 +1931,7 @@ button:focus-visible,a:focus-visible,label[role=button]:focus-visible{outline:2p
 <a class="btn social-btn" href="https://t.me/eugenia_trading" rel="noopener" target="_blank">TELEGRAM · EUGENIA TRADING ACADEMY</a>
 </div>
 
+<button class="btn share-site" id="share-site-button" type="button">WEBSEITE TEILEN</button><p id="share-site-status" class="share-site-status" aria-live="polite"></p>
 <div class="legal-links">
 <label for="impressum-toggle">IMPRESSUM</label><span>·</span><label for="datenschutz-toggle">DATENSCHUTZ</label>
 </div>
@@ -1925,11 +1942,12 @@ button:focus-visible,a:focus-visible,label[role=button]:focus-visible{outline:2p
 <p>E-Mail: eugenia.coaching@gmx.de</p>
 </div>
 <input class="legal-toggle" id="datenschutz-toggle" type="checkbox"/>
-<div class="legal-panel">
+<div class="legal-panel" id="datenschutz">
 <h3>DATENSCHUTZ</h3>
 <p><strong>Verantwortliche</strong><br/>Eugenia Ramich, Raubachstrasse 28, 74906 Bad Rappenau, Deutschland<br/>E-Mail: eugenia.coaching@gmx.de</p>
 <p>Diese Landingpage dient der Information über das Coaching-Angebot und der Kontaktaufnahme. Personenbezogene Daten werden nur verarbeitet, soweit dies für die Bereitstellung der Seite, die Bearbeitung einer Kontaktanfrage oder die Nutzung eines von dir ausgewählten externen Dienstes erforderlich ist.</p>
 <p>Die Seite selbst verwendet keine eigenen Analyse- oder Tracking-Funktionen. Beim Anklicken externer Links zu WhatsApp, Instagram oder Telegram gelten zusätzlich die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
+<h3>Kundenbewertungen</h3><p>Wenn du eine Erfahrung einreichst, werden dein Vorname, dein optional angegebenes Alter, deine Sternebewertung, das gewählte Coaching, dein Text und der Zeitpunkt der Einreichung in einem separaten Bewertungsdienst gespeichert. Die Einreichung ist ohne Kundenkonto möglich. Öffentlich sichtbar werden die genannten Inhalte erst nach persönlicher Freigabe und mit deinem Einverständnis.</p><p>Zum Schutz vor automatisierten Einreichungen wird vorübergehend ein pseudonymisierter Prüfwert aus der Verbindungsadresse gespeichert. Eine Rücknahme deiner Zustimmung oder die Entfernung deiner Erfahrung kannst du unter eugenia.coaching@gmx.de anfragen.</p>
 <p>Du hast im Rahmen der gesetzlichen Vorschriften insbesondere das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch gegen bestimmte Verarbeitungen sowie das Recht, dich bei einer Datenschutzaufsichtsbehörde zu beschweren.</p>
 </div>
 </section>
@@ -1954,40 +1972,55 @@ function togglePremiumPanel(id){
  el.checked=next;
  if(next){var panel=document.getElementById(id==='about-toggle'?'ueber-mich':'kundenmeinungen');if(panel)panel.scrollIntoView({behavior:'smooth',block:'start'});}
 }
-</script><script>
-var reviewPreviewData=null;
-function showReviewForm(){
- document.getElementById('review-form-toggle').checked=true;
- document.getElementById('review-test-result').hidden=true;
- document.getElementById('review-test-form').scrollIntoView({behavior:'smooth',block:'start'});
-}
-function previewReviewSubmit(event){
- event.preventDefault();
- var name=document.getElementById('review-firstname').value.trim();
- var age=document.getElementById('review-age').value.trim();
- if(age&&(!Number.isInteger(Number(age))||Number(age)<1||Number(age)>120))return;
- var type=document.getElementById('review-coaching').value;
- var message=document.getElementById('review-message').value.trim();
- if(!name||!type||message.length<15||!document.getElementById('review-agree').checked)return;
- reviewPreviewData={name:name,age:age,type:type,message:message};
- document.getElementById('review-preview-content').textContent=message+'\n\n'+name+(age?', '+age+' Jahre':'')+' · '+type;
- document.getElementById('review-form-toggle').checked=false;
- document.getElementById('review-test-result').hidden=false;
- document.getElementById('review-test-result').scrollIntoView({behavior:'smooth',block:'start'});
-}
-function approvePreviewReview(){
- if(!reviewPreviewData)return;
- document.querySelector('.review-display .review-body').textContent=reviewPreviewData.message;
- document.querySelector('.review-display .review-name').textContent=reviewPreviewData.name+(reviewPreviewData.age?', '+reviewPreviewData.age+' Jahre':'')+' · '+reviewPreviewData.type+' · TESTFREIGABE';
- document.getElementById('review-test-result').hidden=true;
- document.getElementById('review-test-form').hidden=true;
- document.querySelector('.review-display').scrollIntoView({behavior:'smooth',block:'center'});
-}
-function rejectPreviewReview(){
- document.getElementById('review-test-result').hidden=true;
- reviewPreviewData=null;
- document.querySelector('.review-display').scrollIntoView({behavior:'smooth',block:'center'});
-}
+</script><script id="real-customer-reviews">
+(function(){
+ const endpoint="https://eugenia-kundenerfahrungen.leafyknoll32.chatgpt.site/api/reviews";
+ const form=document.getElementById('review-form');
+ const toggle=document.getElementById('review-form-toggle');
+ const list=document.getElementById('public-reviews');
+ const state=document.getElementById('reviews-load-state');
+ const more=document.getElementById('reviews-more');
+ const retry=document.getElementById('reviews-retry');
+ const submit=document.getElementById('review-submit-button');
+ let openedAt=Date.now(),submissionId=crypto.randomUUID(),cursor=null,loading=false,hasReviews=false;
+ toggle.addEventListener('change',function(){if(toggle.checked){openedAt=Date.now();document.getElementById('review-test-result').hidden=true;}});
+ function renderReview(review){
+  if(!review||typeof review.name!=='string'||typeof review.message!=='string'||!Number.isInteger(review.rating)||review.rating<1||review.rating>5)return;
+  const article=document.createElement('article');article.className='review-display';
+  const stars=document.createElement('div');stars.className='public-review-stars';stars.setAttribute('aria-label',review.rating+' von 5 Sternen');stars.textContent='★'.repeat(review.rating)+'☆'.repeat(5-review.rating);
+  const text=document.createElement('p');text.className='review-body';text.textContent=review.message;
+  const line=document.createElement('div');line.className='review-line';
+  const name=document.createElement('div');name.className='review-name';name.textContent=review.name+(Number.isInteger(review.age)?', '+review.age+' Jahre':'')+' · '+review.coaching;
+  article.append(stars,text,line,name);list.append(article);hasReviews=true;
+ }
+ async function loadReviews(append){
+  if(loading)return;loading=true;more.disabled=true;retry.hidden=true;
+  if(!append){cursor=null;hasReviews=false;list.querySelectorAll('article').forEach(el=>el.remove());state.hidden=false;state.textContent='Kundenerfahrungen werden geladen …';}
+  try{
+   const response=await fetch(endpoint+(append&&cursor?'?cursor='+encodeURIComponent(cursor):''),{credentials:'omit',cache:'no-store'});
+   if(!response.ok)throw Error('load');const data=await response.json();if(!Array.isArray(data.reviews))throw Error('format');
+   data.reviews.forEach(renderReview);cursor=data.nextCursor||null;more.hidden=!cursor;state.hidden=hasReviews;state.textContent='Noch keine freigegebenen Kundenerfahrungen.';
+  }catch(error){state.hidden=false;state.textContent='Die Kundenerfahrungen konnten gerade nicht geladen werden. Bitte versuche es erneut.';retry.hidden=false;more.hidden=true;}
+  finally{loading=false;more.disabled=false;}
+ }
+ more.addEventListener('click',()=>loadReviews(true));retry.addEventListener('click',()=>loadReviews(false));
+ window.submitReview=async function(event){
+  event.preventDefault();if(submit.disabled||!form.reportValidity())return;
+  const error=document.getElementById('review-submit-error');error.hidden=true;
+  const rating=form.querySelector('input[name="review-rating"]:checked');
+  const payload={id:submissionId,name:document.getElementById('review-firstname').value.trim(),age:document.getElementById('review-age').value,rating:Number(rating.value),coaching:document.getElementById('review-coaching').value,message:document.getElementById('review-message').value.trim(),consent:document.getElementById('review-agree').checked,website:document.getElementById('review-website').value,openedAt};
+  submit.disabled=true;submit.textContent='WIRD GESENDET …';
+  try{
+   const response=await fetch(endpoint,{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+   const data=await response.json();if(!response.ok||!data.received)throw Error(data.error||'Deine Erfahrung konnte nicht gesendet werden. Bitte versuche es erneut.');
+   toggle.checked=false;document.querySelector('label[for="review-form-toggle"]').setAttribute('aria-expanded','false');form.reset();submissionId=crypto.randomUUID();
+   const result=document.getElementById('review-test-result');result.hidden=false;result.scrollIntoView({behavior:'smooth',block:'center'});
+  }catch(failure){error.textContent=failure.message==='Failed to fetch'?'Die Verbindung zum Bewertungsdienst hat nicht geklappt. Deine Eingaben bleiben erhalten. Bitte versuche es erneut.':failure.message;error.hidden=false;}
+  finally{submit.disabled=false;submit.textContent='ERFAHRUNG ABSENDEN';}
+ };
+ loadReviews(false);
+ if(location.hash==='#kundenmeinungen'){document.getElementById('testimonials-toggle').checked=true;document.getElementById('kundenmeinungen').scrollIntoView({block:'start'});}
+})();
 </script>
 <script id="accessible-disclosures-20261016">
 (function(){
@@ -2010,6 +2043,15 @@ function rejectPreviewReview(){
  function syncMenus(){document.querySelectorAll('.menu-action').forEach(function(button){var id=button.getAttribute('aria-controls');var checkbox=document.getElementById(id==='ueber-mich'?'about-toggle':'testimonials-toggle');button.setAttribute('aria-expanded',String(checkbox.checked));});}
  document.addEventListener('click',function(){setTimeout(syncMenus,0);});
 })();
+</script>
+<script id="share-site-script">
+document.getElementById('share-site-button').addEventListener('click',async function(){
+ const url='https://eugenia-coaching-academy.com/';const status=document.getElementById('share-site-status');
+ try{if(navigator.share){await navigator.share({title:'Eugenia Coaching Academy',text:'Individuelles 1:1 Coaching für Trading, Trader Performance und persönliche Entwicklung.',url});}
+ else if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(url);status.textContent='Link kopiert.';}
+ else{status.textContent='Dein Link zum Teilen: '+url;}}
+ catch(error){if(error.name!=='AbortError')status.textContent='Dein Link zum Teilen: '+url;}
+});
 </script>
 </body>
 </html>
