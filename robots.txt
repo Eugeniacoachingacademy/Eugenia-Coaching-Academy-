@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eugenia-coaching-academy.com/sitemap.xml
