@@ -1755,7 +1755,31 @@ button:focus-visible,a:focus-visible,label[role=button]:focus-visible{outline:2p
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{transition:none!important;animation:none!important}}
 </style>
-</head>
+<style id="mobile-full-images-and-headings-20261016">
+/* Keep embedded symbols completely visible at every card width. */
+#coaching .coaching-card-image{
+ height:auto!important;
+ aspect-ratio:1.5;
+ object-fit:contain!important;
+ object-position:center!important;
+ background:#0d0d0d;
+}
+/* This heading is one word; fit it without splitting or hiding letters. */
+.testimonials-popup h2{
+ font-size:clamp(13px,4.2vw,24px)!important;
+ letter-spacing:.025em!important;
+ white-space:nowrap!important;
+ word-break:normal!important;
+ overflow-wrap:normal!important;
+ hyphens:none!important;
+ max-width:100%;
+}
+#coaching>.focus-card h2,.premium-header .premium-menu>*{
+ overflow-wrap:normal!important;
+ word-break:normal!important;
+ hyphens:none!important;
+}
+</style></head>
 <body>
 <main class="page">
 <div class="preview-ribbon">DESIGNVORSCHAU · DEINE LIVE-WEBSITE BLEIBT UNVERÄNDERT</div>
