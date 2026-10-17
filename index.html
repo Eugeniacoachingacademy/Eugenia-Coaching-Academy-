@@ -1913,6 +1913,12 @@ button:focus-visible,a:focus-visible,label[role=button]:focus-visible{outline:2p
 }
 </style>
 <style id="logo-rendering-fix">.premium-header .logo-section .logo{filter:none!important;object-fit:contain!important}.academy-path h2{min-height:94px!important}@media(max-width:600px){.academy-path h2{min-height:0!important}}</style>
+<style id="entry-selection-refinement">
+.premium-header .logo-section{background:radial-gradient(ellipse closest-side at center,#000 50%,transparent 100%)!important}
+.premium-header .logo-section .logo{-webkit-mask-image:radial-gradient(circle closest-side,#000 92%,transparent 100%);mask-image:radial-gradient(circle closest-side,#000 92%,transparent 100%)}
+.academy-path .path-symbol{display:block;width:50px;height:50px;flex:none;color:#e6c471;margin:0 0 16px;filter:drop-shadow(0 0 5px #d6aa4633)}
+@media(max-width:600px){.academy-path .path-symbol{width:44px;height:44px;margin-bottom:12px}}
+</style>
 </head>
 <body>
 <main class="page">
@@ -1925,16 +1931,16 @@ button:focus-visible,a:focus-visible,label[role=button]:focus-visible{outline:2p
 
 <section class="academy-entry" aria-labelledby="academy-entry-title">
 <p class="entry-eyebrow">INDIVIDUELLES 1:1 COACHING</p>
-<h1 id="academy-entry-title">Zwei Bereiche.<br>Dein persönlicher Weg.</h1>
+<h1 id="academy-entry-title">Welcher Bereich<br> passt zu dir?</h1>
 <div class="academy-paths">
 <a class="academy-path mental-path" href="#mental-coaching" data-coaching-path="mental-coaching">
-<span class="path-number" aria-hidden="true">01</span>
+<svg class="path-symbol" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M30 14c-3-7-14-6-16 2-7 1-10 9-6 15-5 6-2 15 5 17 0 8 12 12 17 5V14ZM34 14c3-7 14-6 16 2 7 1 10 9 6 15 5 6 2 15-5 17 0 8-12 12-17 5V14Z"/><path d="M14 16c0 5 3 8 7 8M8 31c5-3 10-1 11 4M13 48c3-6 8-7 12-4M21 24c4 0 6 3 5 7M50 16c0 5-3 8-7 8M56 31c-5-3-10-1-11 4M51 48c-3-6-8-7-12-4M43 24c-4 0-6 3-5 7"/></svg>
 <h2>MENTAL<br> COACHING</h2>
 <p>Persönliche Ziele. Klare Entscheidungen. Dein Neuanfang.</p>
 <span class="path-action">ZUM MENTAL COACHING <span aria-hidden="true">→</span></span>
 </a>
 <a class="academy-path trading-path" href="#trading-coaching" data-coaching-path="trading-coaching">
-<span class="path-number" aria-hidden="true">02</span>
+<svg class="path-symbol" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 34v23M26 22v26M40 14v26M54 5v26"/><rect x="8" y="40" width="8" height="11" rx="1" fill="currentColor" fill-opacity=".2"/><rect x="22" y="28" width="8" height="13" rx="1" fill="currentColor" fill-opacity=".35"/><rect x="36" y="19" width="8" height="14" rx="1" fill="currentColor" fill-opacity=".5"/><rect x="50" y="10" width="8" height="14" rx="1" fill="currentColor" fill-opacity=".7"/></svg>
 <h2>TRADING &amp;<br> TRADER PERFORMANCE</h2>
 <p>Trading lernen. Mentale Stärke im Handel. Deine Entwicklung als Trader.</p>
 <span class="path-action">ZU DEN TRADING-ANGEBOTEN <span aria-hidden="true">→</span></span>
